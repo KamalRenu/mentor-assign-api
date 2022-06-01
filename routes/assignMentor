@@ -1,0 +1,13 @@
+const express = require('express');
+const router = express.Router();
+const Reg = require('../modules/assignMentorModule');
+
+router.post('/create-student', Reg.createStudent)
+router.post('/create-mentor', Reg.createMentor);
+router.get('/studentdata', Reg.studentData);
+router.get('/mentordata', Reg.mentorData);
+router.put('/assignmentor/:mentorId', Reg.assignMentor);
+router.put('changeMentor/:studentId', Reg.changeMentor);
+router.get('/unassignedstudents', Reg.unassignedStudents);
+
+module.exports = router;
